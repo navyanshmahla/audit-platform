@@ -8,6 +8,7 @@ import Layout from './Components/Layout';
 import { Route, Routes } from 'react-router-dom';
 import RequireAuth from './protected-routes/RequireAuth';
 import Home from './Pages/Home/Home';
+import Result from './Pages/Result/Result';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route element={<RequireAuth/>}>
           <Route path="/home" element={<Home/>}/>
-          
+          <Route path="/result" element={<Result/>}/>
         </Route>
       </Route>
       </Routes>
