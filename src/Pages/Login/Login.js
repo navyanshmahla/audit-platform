@@ -1,8 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
-import "./Login.css";
 import axios from "../../api/axios";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Button from '@mui/material/Button';
+
 const LOGIN_URL = "/login";
 
 const Login = () => {
@@ -74,7 +75,7 @@ const Login = () => {
         </section>
       ): (
         
-    <section>
+    <div>
       <p
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
@@ -102,8 +103,8 @@ const Login = () => {
           value={pwd}
           required
         />
-
-        <button>Sign In</button>
+        <br/>
+        <Button variant="contained">Sign In</Button>
       </form>
       <p>
         Need an Account?
@@ -113,7 +114,7 @@ const Login = () => {
           <a href="#">Sign Up</a>
         </span>
       </p>
-    </section>
+    </div>
   )}</>)
 };
 
