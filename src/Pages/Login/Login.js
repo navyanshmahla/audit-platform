@@ -17,6 +17,8 @@ const Login = () => {
   const [pwd, setPwd] = useState("");
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  
+  const[emailFocus, setEmailFocus] = useState(false);
   const[success, setSuccess]=useState(false);
 
   useEffect(() => {
@@ -92,6 +94,8 @@ const Login = () => {
           autoComplete="off"
           ref={emailRef}
           onChange={(e) => setEmail(e.target.value)}
+          onFocus={()=>setEmailFocus(true)}
+          onBlur={()=>setEmailFocus(false)}
           value={email}
           required
         />
@@ -110,8 +114,8 @@ const Login = () => {
         Need an Account?
         <br />
         <span className="line">
-          {/*put router link here*/}
-          <a href="#">Sign Up</a>
+          
+          <Link to="/register">Sign Up</Link>
         </span>
       </p>
     </div>

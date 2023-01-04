@@ -7,6 +7,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "../../api/axios";
+import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
+
 const REGISTER_URL = "/signup";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
@@ -223,19 +226,19 @@ const Register = () => {
               <FontAwesomeIcon icon={faInfoCircle} />
               Must match the first password input field.
             </p>
-
-            <button
+            <br/>
+            <Button variant="contained"
               disabled={!validName || !validPwd || !validMatch ? true : false}
             >
               Sign Up
-            </button>
+            </Button>
           </form>
           <p>
             Already registered?
             <br />
             <span className="line">
-              {/*put router link here*/}
-              <a href="#">Sign In</a>
+
+            <Link to="/login">Sign In</Link>
             </span>
           </p>
         </div>

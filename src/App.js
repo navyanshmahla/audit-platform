@@ -1,6 +1,5 @@
 import './App.css';
 import Navbar from './Components/NavBar/Navbar';
-
 import Register from "./Pages/Register/Register";
 import Login from "./Pages/Login/Login";
 import Footer from './Components/Footer/footer';
