@@ -98,12 +98,12 @@ const Register = () => {
   return (
     <>
       {success ? (
-        <section>
+        <div>
           <h1>Success!</h1>
           <p>
-            <a href="#">Sign In</a>
+            <Link to="/login">Sign In</Link>
           </p>
-        </section>
+        </div>
       ) : (
         <div>
           <p
@@ -227,7 +227,7 @@ const Register = () => {
               Must match the first password input field.
             </p>
             <br/>
-            <Button variant="contained"
+            <Button variant="contained" onClick={handleSubmit}
               disabled={!validName || !validPwd || !validMatch ? true : false}
             >
               Sign Up

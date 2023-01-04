@@ -68,13 +68,13 @@ const Login = () => {
   return (
     <>
       {success ? (
-        <section>
-          <h1>You are logged in!</h1>
+        <div>
+          <h1>You are successfully logged in!</h1>
           <br/>
           <p>
-            Go to <Link to="/">your dashboard</Link>.
+            Go to <Link to="/">your dashboard</Link> to upload your files and see the analysis result.
           </p>
-        </section>
+        </div>
       ): (
         
     <div>
@@ -108,7 +108,7 @@ const Login = () => {
           required
         />
         <br/>
-        <Button variant="contained">Sign In</Button>
+        <Button variant="contained" onClick={handleSubmit}>Sign In</Button>
       </form>
       <p>
         Need an Account?
