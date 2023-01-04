@@ -10,6 +10,7 @@ import RequireAuth from './protected-routes/RequireAuth';
 import Home from './Pages/Home/Home';
 import Result from './Pages/Result/Result';
 
+
 function App() {
   return (
     <div className="App">
@@ -19,8 +20,9 @@ function App() {
       <Route path="/" element={<Layout/>}>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        
         <Route element={<RequireAuth/>}>
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/result" element={<Result/>}/>
         </Route>
       </Route>

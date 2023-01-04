@@ -7,15 +7,16 @@ const LOGIN_URL = "/login";
 
 const Login = () => {
   const { setAuth } = useAuth();
-  const navigate = useNavigate();
+
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+
   const emailRef = useRef();
   const errRef = useRef();
 
   const [pwd, setPwd] = useState("");
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const[success, setSuccess]=useState(false);
 
   useEffect(() => {
     emailRef.current.focus();
@@ -45,7 +46,8 @@ const Login = () => {
 
       setPwd("");
       setEmail("");
-      navigate(from, { replace: true });
+      setSuccess(true);
+
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -61,6 +63,17 @@ const Login = () => {
   };
 
   return (
+    <>
+      {success ? (
+        <section>
+          <h1>You are logged in!</h1>
+          <br/>
+          <p>
+            Go to <Link to="/">your dashboard</Link>.
+          </p>
+        </section>
+      ): (
+        
     <section>
       <p
         ref={errRef}
@@ -101,7 +114,7 @@ const Login = () => {
         </span>
       </p>
     </section>
-  );
+  )}</>)
 };
 
 export default Login;

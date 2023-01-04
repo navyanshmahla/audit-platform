@@ -126,6 +126,20 @@ const Register = () => {
               onFocus={() => setUserFocus(true)}
               onBlur={() => setUserFocus(false)}
             />
+            <label htmlFor="email">Email:</label>
+            <input
+              type="text"
+              id="fullName"
+              ref={userRef}
+              autoComplete="off"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              required
+              aria-invalid={validName ? "false" : "true"}
+              aria-describedby="uidnote"
+              onFocus={() => setEmailFocus(true)}
+              onBlur={() => setEmailFocus(false)}
+            />
             <p
               id="uidnote"
               className={
