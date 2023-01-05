@@ -42,10 +42,14 @@ const Login = () => {
         }
       );
       console.log(JSON.stringify(response?.data));
-      //console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
+      console.log(response?.data.access_token)
+      
+      const accessToken = response?.data.access_token;
+      //console.log(JSON.stringify(response.data).accessToken)
+      //console.log(JSON.parse(response.data))
+      localStorage.setItem('access_token', accessToken)
       //const roles = response?.data?.roles;
-      setAuth({ email, pwd, accessToken });
+      //setAuth({ email, pwd, accessToken });
 
       setPwd("");
       setEmail("");

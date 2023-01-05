@@ -2,11 +2,18 @@ import React from 'react';
 import {
   MDBContainer,
   MDBNavbar,
-  MDBNavbarBrand
+  MDBNavbarBrand,
+  MDBBtn
 } from 'mdb-react-ui-kit';
 import Logo from "../../assets/marsh.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function App() {
+  const navigate = useNavigate()
+  const handleLogout = async(e) => {
+    localStorage.clear()
+    navigate("/login")
+  }
   return (
     <>
       <MDBNavbar light bgColor='light'>
@@ -20,8 +27,11 @@ export default function App() {
               align = 'left'
             />
           </MDBNavbarBrand>
+          <MDBBtn onClick={handleLogout}>Logout</MDBBtn>
         </MDBContainer>
       </MDBNavbar>
     </>
   );
 }
+
+
